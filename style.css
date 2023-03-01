@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cel {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #000;
+  border-radius: 5px;
+  text-align: center;
+  font-family: monospace;
+  font-size: 70px;
+  padding: 10px;
+}
+
+.renderGame {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  margin: 50px auto 0 auto;
+}

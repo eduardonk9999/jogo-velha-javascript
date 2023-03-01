@@ -47,6 +47,18 @@ function play() {
 }
 
 
+// variável para manter o controle do jogador atual (X ou O)
+// let currentPlayer = "X";
+
+// função para alternar para o próximo jogador
+// function switchPlayer() {
+//   currentPlayer = currentPlayer === "X" ? "O" : "X";
+// }
+
+// exemplo de uso da função switchPlayer
+// console.log(currentPlayer); // "X"
+// switchPlayer();
+// console.log(currentPlayer); // "O"
 
 
 boardCreat()

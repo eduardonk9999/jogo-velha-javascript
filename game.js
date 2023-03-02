@@ -9,6 +9,12 @@ function boardCreat() {
   }
 }
 
+let currentPlayer = 'X'
+
+function switchPlayer() {
+  currentPlayer = currentPlayer === "X" ? "O" : "X"
+}
+
 
 function clickPalyer() {
   const boxs = document.querySelectorAll('.cel');
@@ -16,23 +22,9 @@ function clickPalyer() {
   boxs.forEach(box => {
   
     box.addEventListener("click", () => {
-      box.innerHTML = 'X'
-      
-      if(event.target.textContent == 'X'){
-        console.log('SOU X') 
-      } else {
-        console.log('SOU O')
-      }
-      
-      // if(box.textContent === 'O') {
-      //   event.target.innerHTML = 'X'
-      // } else {
-      //   event.target.innerHTML = 'O'
-      // }    
+      box.innerHTML = currentPlayer
+      switchPlayer()
     })
-
-   
-    
   })
 }
 
@@ -42,23 +34,11 @@ function play() {
     [0, 3, 6], [1, 4, 7], [2, 5, 8],
     [0, 4, 8], [2, 4, 6] 
   ]
-
-  
 }
 
 
-// variável para manter o controle do jogador atual (X ou O)
-// let currentPlayer = "X";
+// Criar Logica de quando der ###VELHA###
 
-// função para alternar para o próximo jogador
-// function switchPlayer() {
-//   currentPlayer = currentPlayer === "X" ? "O" : "X";
-// }
-
-// exemplo de uso da função switchPlayer
-// console.log(currentPlayer); // "X"
-// switchPlayer();
-// console.log(currentPlayer); // "O"
 
 
 boardCreat()

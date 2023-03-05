@@ -24,11 +24,6 @@ function boardCreat() {
 function switchPlayer(data) {
   currentPlayer = currentPlayer === "X" ? "O" : "X"
 
-
-  
-
-  // console.log(data)
-
   if(currentPlayer === 'O') {
     plaerX.push(+data)
   } else {
@@ -36,24 +31,17 @@ function switchPlayer(data) {
   }
 }
 
-
-function verificaJogada() {
-  // if(victories[5] === plaerX) {
-  //   console.log('velha')
-  // }
-
-  // console.log(plaerX)
-  // console.log(typeof victories[5])
-
-  if(JSON.stringify(plaerX) === JSON.stringify(victories[5]) ) {
-    console.log('VELHA')
-  } else {
-    console.log('ERRO')
+function verificaJogada() {  
+  for(let i = 0; i < victories.length; i++){
+    if(JSON.stringify(plaerX) === JSON.stringify(victories[i]) ||
+    JSON.stringify(plaerY) === JSON.stringify(victories[i])
+    ) {
+      console.log('VELHA')
+    } 
   }
-  // console.log(JSON.stringify(plaerX))
+
 }
 
-console.log(victories[5])
 function clickPalyer() {
   const boxs = document.querySelectorAll('.cel');
 
@@ -64,32 +52,8 @@ function clickPalyer() {
       switchPlayer(box.dataset.add)
       verificaJogada()
     })
-
-    
   })
-
-  
-
-  
 }
-
-// Criar Logica de quando der ###VELHA###
-// function play() {
-
-
-//   const teste = victories.filter(m => (
-//     console.log(m)
-//   ))
-
-//   console.log(teste)
-
-// }
-
-
-
-
-
 
 boardCreat()
 clickPalyer()
-// play()
